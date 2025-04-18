@@ -1,0 +1,123 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { motion } from "framer-motion";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-white to-gray-100 p-4 text-gray-800">
+      <section className="text-center py-12">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-6xl font-bold tracking-wide"
+        >
+          Gstyle
+        </motion.h1>
+        <p className="text-xl text-gray-600 mt-3 max-w-xl mx-auto">
+          სტილი იწყება შენით – აღმოაჩინე თანამედროვე სტრიტვეარ კოლექცია, შექმნილი სითამამისთვის და კომფორტისთვის.
+        </p>
+      </section>
+
+      {/* მაისურები */}
+      <section className="mt-16">
+        <h2 className="text-3xl font-semibold mb-6 border-b pb-2">მაისურები</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((item) => (
+            <Card key={item} className="rounded-2xl shadow-lg hover:shadow-xl transition">
+              <CardContent className="p-4">
+                <img
+                  src={`https://source.unsplash.com/400x400/?tshirt&sig=${item}`}
+                  alt={`Gstyle Tee ${item}`}
+                  className="w-full h-60 object-cover rounded-xl mb-4"
+                />
+                <h3 className="text-xl font-semibold mb-1">Gstyle Classic Tee</h3>
+                <p className="text-gray-500 text-sm mb-2">100% ბამბა, კომფორტული და გამძლე</p>
+                <p className="text-lg font-bold mb-2">₾69.00</p>
+                <Button className="w-full">შესყიდვა</Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* ქურთუკები */}
+      <section className="mt-16">
+        <h2 className="text-3xl font-semibold mb-6 border-b pb-2">ქურთუკები</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[1, 2].map((item) => (
+            <Card key={item} className="rounded-2xl shadow-lg hover:shadow-xl transition">
+              <CardContent className="p-4">
+                <img
+                  src={`https://source.unsplash.com/400x400/?jacket&sig=${item}`}
+                  alt={`Gstyle Jacket ${item}`}
+                  className="w-full h-60 object-cover rounded-xl mb-4"
+                />
+                <h3 className="text-xl font-semibold mb-1">Urban Windbreaker</h3>
+                <p className="text-gray-500 text-sm mb-2">წყალგამძლე და მსუბუქი</p>
+                <p className="text-lg font-bold mb-2">₾159.00</p>
+                <Button className="w-full">შესყიდვა</Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* აქსესუარები */}
+      <section className="mt-16">
+        <h2 className="text-3xl font-semibold mb-6 border-b pb-2">აქსესუარები</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[1].map((item) => (
+            <Card key={item} className="rounded-2xl shadow-lg hover:shadow-xl transition">
+              <CardContent className="p-4">
+                <img
+                  src={`https://source.unsplash.com/400x400/?cap&sig=${item}`}
+                  alt={`Gstyle Cap ${item}`}
+                  className="w-full h-60 object-cover rounded-xl mb-4"
+                />
+                <h3 className="text-xl font-semibold mb-1">Gstyle Cap</h3>
+                <p className="text-gray-500 text-sm mb-2">უნივერსალური ზომა, მსუბუქი</p>
+                <p className="text-lg font-bold mb-2">₾39.00</p>
+                <Button className="w-full">შესყიდვა</Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* ავტორიზაცია */}
+      <section className="mt-24 max-w-md mx-auto text-center">
+        <h2 className="text-2xl font-bold mb-4">ავტორიზაცია</h2>
+        <Input placeholder="ელფოსტა" className="mb-2" />
+        <Input placeholder="პაროლი" type="password" className="mb-4" />
+        <Button className="w-full mb-2">შესვლა</Button>
+        <p className="text-sm text-gray-500">ან შედი სოციალური ქსელებით</p>
+        <div className="flex justify-center gap-4 mt-2">
+          <Button variant="outline">Google</Button>
+          <Button variant="outline">Facebook</Button>
+        </div>
+      </section>
+
+      {/* გადახდის სექცია */}
+      <section className="mt-24 max-w-md mx-auto bg-white shadow-md rounded-2xl p-6">
+        <h2 className="text-2xl font-semibold text-center mb-4">გადახდა</h2>
+        <Input placeholder="ბარათის ნომერი" className="mb-2" />
+        <Input placeholder="ვადა (MM/YY)" className="mb-2" />
+        <Input placeholder="CVC კოდი" className="mb-4" />
+        <Button className="w-full">გადახდა</Button>
+      </section>
+
+      {/* გამოწერის სექცია */}
+      <section className="mt-24 max-w-md mx-auto bg-white shadow-md rounded-2xl p-6">
+        <h2 className="text-2xl font-semibold text-center mb-4">გამოიწერე სიახლეები</h2>
+        <p className="text-center text-gray-500 mb-4">მიიღე ექსკლუზიური შეთავაზებები და უახლესი კოლექციები</p>
+        <div className="flex gap-2">
+          <Input placeholder="შეიყვანე ელფოსტა" className="flex-1" />
+          <Button>გამოწერა</Button>
+        </div>
+      </section>
+    </main>
+  );
+}
